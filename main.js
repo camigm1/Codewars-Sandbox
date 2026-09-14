@@ -301,14 +301,33 @@ function findEvenIndex(arr) {
 // findOdd([1, 1, 2]);
 
 /////////////////////////////////////////////////
-function getRealFloor(n) {
-  if (n > 12) {
-    return n - 2;
-  } else if (n < 0) {
-    return n;
+// function getRealFloor(n) {
+//   if (n > 12) {
+//     return n - 2;
+//   } else if (n < 0) {
+//     return n;
+//   } else {
+//     return n - 1;
+//   }
+// }
+
+// getRealFloor(15);
+
+function likes(names) {
+  if (names.length === 0) {
+    console.log("no one likes this");
+  } else if (names.length === 1) {
+    console.log(`${names[0]} likes this`);
+  } else if (names.length === 2) {
+    console.log(`${names[0]} and ${names[1]} like this`);
+  } else if (name.length === 3) {
+    console.log(`${names[0]},${names[1]} and ${name[2]} like this`);
+  } else if (names.length === 4) {
+    console.log(`${names[0]},${names[1]} and 2 others like this`);
   } else {
-    return n - 1;
+    console.log(
+      `${names[0]}, ${names[1]} and ${names.length - 2} others like this`,
+    );
   }
 }
-
-getRealFloor(15);
+likes(["Alex", "Chica", "Mark", "Max", "Cami", "Wami"]);
