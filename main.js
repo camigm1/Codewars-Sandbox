@@ -333,17 +333,28 @@ function findEvenIndex(arr) {
 // likes(["Alex", "Chica", "Mark", "Max", "Cami", "Wami"]);
 
 ///////////////////////////////////////////////////////
-function solution(number) {
-  const arr = [];
+// function solution(number) {
+//   const arr = [];
 
-  for (let i = number - 1; i > 0; i--) {
-    if (i % 3 === 0 || i % 5 === 0) {
-      arr.push(i);
-    }
-  }
-  return [...new Set(arr)].reduce((acc, num) => {
-    return acc + num;
-  }, 0);
+//   for (let i = number - 1; i > 0; i--) {
+//     if (i % 3 === 0 || i % 5 === 0) {
+//       arr.push(i);
+//     }
+//   }
+//   return [...new Set(arr)].reduce((acc, num) => {
+//     return acc + num;
+//   }, 0);
+// }
+
+// solution(10);
+
+//////////////////////////////////////////////////
+
+function toCamelCase(str) {
+  const arr = str.split(/[^a-zA-Z]+/).map((word, i) => {
+    return i === 0 ? word : word.charAt(0).toUpperCase() + word.slice(1);
+  });
+  console.log(arr.join(""));
 }
 
-solution(10);
+toCamelCase("the_stealth_warrior");
