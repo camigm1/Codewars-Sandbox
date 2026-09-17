@@ -351,10 +351,12 @@ function findEvenIndex(arr) {
 //////////////////////////////////////////////////
 
 function toCamelCase(str) {
-  const arr = str.split(/[^a-zA-Z]+/).map((word, i) => {
-    return i === 0 ? word : word.charAt(0).toUpperCase() + word.slice(1);
-  });
-  console.log(arr.join(""));
+  return str
+    .split(/[^a-zA-Z]+/)
+    .map((word, i) => {
+      return i === 0 ? word : word.charAt(0).toUpperCase() + word.slice(1);
+    })
+    .join("");
 }
 
 toCamelCase("the_stealth_warrior");
