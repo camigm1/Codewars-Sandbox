@@ -313,21 +313,37 @@ function findEvenIndex(arr) {
 
 // getRealFloor(15);
 
-function likes(names) {
-  if (names.length === 0) {
-    console.log("no one likes this");
-  } else if (names.length === 1) {
-    console.log(`${names[0]} likes this`);
-  } else if (names.length === 2) {
-    console.log(`${names[0]} and ${names[1]} like this`);
-  } else if (name.length === 3) {
-    console.log(`${names[0]},${names[1]} and ${name[2]} like this`);
-  } else if (names.length === 4) {
-    console.log(`${names[0]},${names[1]} and 2 others like this`);
-  } else {
-    console.log(
-      `${names[0]}, ${names[1]} and ${names.length - 2} others like this`,
-    );
+// function likes(names) {
+//   if (names.length === 0) {
+//     console.log("no one likes this");
+//   } else if (names.length === 1) {
+//     console.log(`${names[0]} likes this`);
+//   } else if (names.length === 2) {
+//     console.log(`${names[0]} and ${names[1]} like this`);
+//   } else if (name.length === 3) {
+//     console.log(`${names[0]},${names[1]} and ${name[2]} like this`);
+//   } else if (names.length === 4) {
+//     console.log(`${names[0]},${names[1]} and 2 others like this`);
+//   } else {
+//     console.log(
+//       `${names[0]}, ${names[1]} and ${names.length - 2} others like this`,
+//     );
+//   }
+// }
+// likes(["Alex", "Chica", "Mark", "Max", "Cami", "Wami"]);
+
+///////////////////////////////////////////////////////
+function solution(number) {
+  const arr = [];
+
+  for (let i = number - 1; i > 0; i--) {
+    if (i % 3 === 0 || i % 5 === 0) {
+      arr.push(i);
+    }
   }
+  return [...new Set(arr)].reduce((acc, num) => {
+    return acc + num;
+  }, 0);
 }
-likes(["Alex", "Chica", "Mark", "Max", "Cami", "Wami"]);
+
+solution(10);
