@@ -373,7 +373,9 @@ function findOutlier(integers) {
 }
 
 function findOutlier(integers) {
-  const unique = integers.filter((x) => {});
+  const even = integers.filter((x) => x % 2 === 0);
+  const odd = integers.filter((x) => x % 2 !== 0);
+  console.log(even.length > 1 ? odd[0] : even[0]);
 }
 
 findOutlier([0, 1, 2]);
