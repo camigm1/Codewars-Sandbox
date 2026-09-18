@@ -350,13 +350,30 @@ function findEvenIndex(arr) {
 
 //////////////////////////////////////////////////
 
-function toCamelCase(str) {
-  return str
-    .split(/[^a-zA-Z]+/)
-    .map((word, i) => {
-      return i === 0 ? word : word.charAt(0).toUpperCase() + word.slice(1);
-    })
-    .join("");
+// function toCamelCase(str) {
+//   return str
+//     .split(/[^a-zA-Z]+/)
+//     .map((word, i) => {
+//       return i === 0 ? word : word.charAt(0).toUpperCase() + word.slice(1);
+//     })
+//     .join("");
+// }
+
+// toCamelCase("the_stealth_warrior");
+
+/////////////////////////////////////////////////////////////////
+
+function findOutlier(integers) {
+  const even = [];
+  const odd = [];
+  for (let num of integers) {
+    num % 2 === 0 ? even.push(num) : odd.push(num);
+  }
+  console.log(even.length > 1 ? Number(odd.join("")) : Number(even.join("")));
 }
 
-toCamelCase("the_stealth_warrior");
+function findOutlier(integers) {
+  const unique = integers.filter((x) => {});
+}
+
+findOutlier([0, 1, 2]);
