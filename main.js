@@ -363,19 +363,29 @@ function findEvenIndex(arr) {
 
 /////////////////////////////////////////////////////////////////
 
-function findOutlier(integers) {
-  const even = [];
-  const odd = [];
-  for (let num of integers) {
-    num % 2 === 0 ? even.push(num) : odd.push(num);
-  }
-  console.log(even.length > 1 ? Number(odd.join("")) : Number(even.join("")));
+// function findOutlier(integers) {
+//   const even = [];
+//   const odd = [];
+//   for (let num of integers) {
+//     num % 2 === 0 ? even.push(num) : odd.push(num);
+//   }
+//   console.log(even.length > 1 ? Number(odd.join("")) : Number(even.join("")));
+// }
+
+// function findOutlier(integers) {
+//   const even = integers.filter((x) => x % 2 === 0);
+//   const odd = integers.filter((x) => x % 2 !== 0);
+//   console.log(even.length > 1 ? odd[0] : even[0]);
+// }
+
+// findOutlier([0, 1, 2]);
+
+////////////////////////////////////////
+
+function moveZeros(arr) {
+  const nonzeros = arr.filter((x) => x !== 0);
+  const zeros = arr.filter((x) => x === 0);
+  console.log([...nonzeros, ...zeros]);
 }
 
-function findOutlier(integers) {
-  const even = integers.filter((x) => x % 2 === 0);
-  const odd = integers.filter((x) => x % 2 !== 0);
-  console.log(even.length > 1 ? odd[0] : even[0]);
-}
-
-findOutlier([0, 1, 2]);
+moveZeros([1, 2, 0, 1, 0, 1, 0, 3, 0, 1]);
