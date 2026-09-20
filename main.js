@@ -382,10 +382,28 @@ function findEvenIndex(arr) {
 
 ////////////////////////////////////////
 
-function moveZeros(arr) {
-  const nonzeros = arr.filter((x) => x !== 0);
-  const zeros = arr.filter((x) => x === 0);
-  console.log([...nonzeros, ...zeros]);
+// function moveZeros(arr) {
+//   const nonzeros = arr.filter((x) => x !== 0);
+//   const zeros = arr.filter((x) => x === 0);
+//   console.log([...nonzeros, ...zeros]);
+// }
+
+// moveZeros([1, 2, 0, 1, 0, 1, 0, 3, 0, 1]);
+
+//////////////////////////////////////////////////////////
+//Simple class
+class Animal {
+  constructor(name, type) {
+    this.name = name;
+    this.type = type;
+  }
+  toString() {
+    console.log(`${this.name} is a ${this.type}`);
+  }
 }
 
-moveZeros([1, 2, 0, 1, 0, 1, 0, 3, 0, 1]);
+const oaty = new Animal("Oaty", "cat");
+oaty.toString();
+
+oaty.name = "chicho";
+console.log(oaty.name);
