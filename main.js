@@ -392,18 +392,26 @@ function findEvenIndex(arr) {
 
 //////////////////////////////////////////////////////////
 //Simple class
-class Animal {
-  constructor(name, type) {
-    this.name = name;
-    this.type = type;
-  }
-  toString() {
-    console.log(`${this.name} is a ${this.type}`);
-  }
+// class Animal {
+//   constructor(name, type) {
+//     this.name = name;
+//     this.type = type;
+//   }
+//   toString() {
+//     console.log(`${this.name} is a ${this.type}`);
+//   }
+// }
+
+// const oaty = new Animal("Oaty", "cat");
+// oaty.toString();
+
+// oaty.name = "chicho";
+// console.log(oaty.name);
+
+////////////////////////////////////
+function sumTwoSmallestNumbers(numbers) {
+  const sort = numbers.sort((a, b) => a - b);
+  console.log(sort[0] + sort[1]);
 }
 
-const oaty = new Animal("Oaty", "cat");
-oaty.toString();
-
-oaty.name = "chicho";
-console.log(oaty.name);
+sumTwoSmallestNumbers([5, 8, 12, 19, 22, 1, 0]);
