@@ -409,9 +409,43 @@ function findEvenIndex(arr) {
 // console.log(oaty.name);
 
 ////////////////////////////////////
-function sumTwoSmallestNumbers(numbers) {
-  const sort = numbers.sort((a, b) => a - b);
-  console.log(sort[0] + sort[1]);
+// function sumTwoSmallestNumbers(numbers) {
+//   const sort = numbers.sort((a, b) => a - b);
+//   console.log(sort[0] + sort[1]);
+// }
+
+// sumTwoSmallestNumbers([5, 8, 12, 19, 22, 1, 0]);
+
+// deadAntCount = function (ants) {
+//   let a = 0;
+//   let n = 0;
+//   let t = 0;
+//   const replaced = ants !== null ? ants.replaceAll("ant", " ").split("") : 0;
+//   if (replaced !== 0) {
+//     for (let ant of replaced) {
+//       if (ant === "a") {
+//         a++;
+//       } else if (ant === "n") {
+//         n++;
+//       } else if (ant === "t") {
+//         t++;
+//       }
+//     }
+//   }
+//   console.log(replaced);
+//   console.log(replaced === 0 ? 0 : Number([a, n, t].sort((a, b) => a - b)[0]));
+// };
+
+// deadAntCount("");
+
+/////////////////////////////////////////
+
+function unsquaredDigits(n) {
+  const squared = String(n)
+    .split("")
+    .map((n) => n * n)
+    .join("");
+  console.log(squared);
 }
 
-sumTwoSmallestNumbers([5, 8, 12, 19, 22, 1, 0]);
+unsquaredDigits(765);
