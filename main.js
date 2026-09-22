@@ -440,12 +440,37 @@ function findEvenIndex(arr) {
 
 /////////////////////////////////////////
 
-function unsquaredDigits(n) {
-  const squared = String(n)
-    .split("")
-    .map((n) => n * n)
-    .join("");
-  console.log(squared);
+// function unsquaredDigits(n) {
+//   const squared = String(n)
+//     .split("")
+//     .map((n) => n * n)
+//     .join("");
+//   console.log(squared);
+// }
+
+// unsquaredDigits(765);
+
+///////////////////////////////////////////
+function order(words) {
+  const newOrder = [];
+  const wordsNum = words.split(" ").sort((a, b) => {
+    const numA = parseInt(a.match(/\d+/));
+    const numB = parseInt(b.match(/\d+/));
+
+    // Sort in ascending order
+    return numA - numB;
+  });
+  console.log(wordsNum);
 }
 
-unsquaredDigits(765);
+order("is2 Thi1s T4est 3a");
+
+/////////////////////////////////////////
+function order(words) {
+  return words
+    .split(" ")
+    .sort(function (a, b) {
+      return a.match(/\d/) - b.match(/\d/);
+    })
+    .join(" ");
+}
