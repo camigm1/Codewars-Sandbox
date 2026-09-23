@@ -451,26 +451,41 @@ function findEvenIndex(arr) {
 // unsquaredDigits(765);
 
 ///////////////////////////////////////////
-function order(words) {
-  const newOrder = [];
-  const wordsNum = words.split(" ").sort((a, b) => {
-    const numA = parseInt(a.match(/\d+/));
-    const numB = parseInt(b.match(/\d+/));
+// function order(words) {
+//   const newOrder = [];
+//   const wordsNum = words.split(" ").sort((a, b) => {
+//     const numA = parseInt(a.match(/\d+/));
+//     const numB = parseInt(b.match(/\d+/));
 
-    // Sort in ascending order
-    return numA - numB;
+//     // Sort in ascending order
+//     return numA - numB;
+//   });
+//   console.log(wordsNum);
+// }
+
+// order("is2 Thi1s T4est 3a");
+
+// /////////////////////////////////////////
+// function order(words) {
+//   return words
+//     .split(" ")
+//     .sort(function (a, b) {
+//       return a.match(/\d/) - b.match(/\d/);
+//     })
+//     .join(" ");
+// }
+
+function solution(string) {
+  string = string.split("").map(function (el) {
+    if (el === el.toUpperCase()) {
+      el = " " + el;
+      console.log(el);
+    }
+    return el;
   });
-  console.log(wordsNum);
+
+  console.log(string.join(""));
+  console.log();
 }
 
-order("is2 Thi1s T4est 3a");
-
-/////////////////////////////////////////
-function order(words) {
-  return words
-    .split(" ")
-    .sort(function (a, b) {
-      return a.match(/\d/) - b.match(/\d/);
-    })
-    .join(" ");
-}
+solution("camelCasing");
