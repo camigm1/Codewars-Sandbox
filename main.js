@@ -475,17 +475,26 @@ function findEvenIndex(arr) {
 //     .join(" ");
 // }
 
-function solution(string) {
-  string = string.split("").map(function (el) {
-    if (el === el.toUpperCase()) {
-      el = " " + el;
-      console.log(el);
-    }
-    return el;
-  });
+// function solution(string) {
+//   string = string.split("").map(function (el) {
+//     if (el === el.toUpperCase()) {
+//       el = " " + el;
+//       console.log(el);
+//     }
+//     return el;
+//   });
 
-  console.log(string.join(""));
-  console.log();
+//   console.log(string.join(""));
+//   console.log();
+// }
+
+// solution("camelCasing");
+
+function solution(str, ending) {
+  const word = str.split("").reverse();
+  const ends = ending.split("");
+  const changed = word.splice(0, ends.length, ...ends.reverse());
+  console.log(word.reverse().join("") === str ? true : false);
 }
 
-solution("camelCasing");
+solution("abcde", "abc");
