@@ -508,3 +508,13 @@ function findEvenIndex(arr) {
 // function makeUpperCase(str) {
 //   return str.toUpperCase();
 // }
+
+/////////////////////////////
+function abbrevName(name) {
+  const arr = name.toUpperCase().split(" ");
+  console.log(arr);
+  console.log(arr[0].charAt(0), arr[1].charAt(0));
+  return `${arr[0].charAt(0)}.${arr[1].charAt(0)}`;
+}
+
+abbrevName("Camila Gallegos");
