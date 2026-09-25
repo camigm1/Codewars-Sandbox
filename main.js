@@ -499,8 +499,12 @@ function findEvenIndex(arr) {
 
 // solution("abcde", "abc");
 
-function problem(x) {
-  return typeof x === "string" ? "Error" : x * 50 + 6;
-}
+// function problem(x) {
+//   return typeof x === "string" ? "Error" : x * 50 + 6;
+// }
 
-problem(4);
+// problem(4);
+// //////////////////////////////////////////
+// function makeUpperCase(str) {
+//   return str.toUpperCase();
+// }
