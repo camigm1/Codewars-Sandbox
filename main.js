@@ -510,11 +510,51 @@ function findEvenIndex(arr) {
 // }
 
 /////////////////////////////
-function abbrevName(name) {
-  const arr = name.toUpperCase().split(" ");
-  console.log(arr);
-  console.log(arr[0].charAt(0), arr[1].charAt(0));
-  return `${arr[0].charAt(0)}.${arr[1].charAt(0)}`;
+// function abbrevName(name) {
+//   const arr = name.toUpperCase().split(" ");
+//   console.log(arr);
+//   console.log(arr[0].charAt(0), arr[1].charAt(0));
+//   return `${arr[0].charAt(0)}.${arr[1].charAt(0)}`;
+// }
+
+// abbrevName("Camila Gallegos");
+
+/////////////////////////////////////
+function switchItUp(number) {
+  switch (number) {
+    case 0:
+      return "Zero";
+      break;
+    case 1:
+      return "One";
+      break;
+    case 2:
+      return "Two";
+      break;
+    case 3:
+      return "Three";
+      break;
+    case 4:
+      return "Four";
+      break;
+    case 5:
+      return "Five";
+      break;
+    case 6:
+      return "Six";
+      break;
+    case 7:
+      return "Seven";
+      break;
+    case 8:
+      return "Eight";
+      break;
+    case 9:
+      return "Nine";
+      break;
+    default:
+      console.log(`Sorry, we are out of ${expr}.`);
+  }
 }
 
-abbrevName("Camila Gallegos");
+switchItUp(number);
