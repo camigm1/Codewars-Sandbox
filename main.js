@@ -490,11 +490,17 @@ function findEvenIndex(arr) {
 
 // solution("camelCasing");
 
-function solution(str, ending) {
-  const word = str.split("").reverse();
-  const ends = ending.split("");
-  const changed = word.splice(0, ends.length, ...ends.reverse());
-  console.log(word.reverse().join("") === str ? true : false);
+// function solution(str, ending) {
+//   const word = str.split("").reverse();
+//   const ends = ending.split("");
+//   const changed = word.splice(0, ends.length, ...ends.reverse());
+//   console.log(word.reverse().join("") === str ? true : false);
+// }
+
+// solution("abcde", "abc");
+
+function problem(x) {
+  return typeof x === "string" ? "Error" : x * 50 + 6;
 }
 
-solution("abcde", "abc");
+problem(4);
