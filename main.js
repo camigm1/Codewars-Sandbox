@@ -561,40 +561,46 @@ function findEvenIndex(arr) {
 
 ////////////////////////////////////////
 
-class Block {
-  constructor(data) {
-    this.width = data[0];
-    this.lengthy = data[1];
-    this.height = data[2];
-  }
-  getWidth() {
-    return this.width;
-  }
-  getLength() {
-    return this.lengthy;
-  }
-  getHeight() {
-    return this.height;
-  }
-  getVolume() {
-    return this.height * this.lengthy * this.width;
-  }
-  getSurfaceArea() {
-    return (
-      2 * (this.height * this.width) +
-      2 * (this.lengthy * this.width) +
-      2 * (this.lengthy * this.height)
-    );
-  }
+// class Block {
+//   constructor(data) {
+//     this.width = data[0];
+//     this.lengthy = data[1];
+//     this.height = data[2];
+//   }
+//   getWidth() {
+//     return this.width;
+//   }
+//   getLength() {
+//     return this.lengthy;
+//   }
+//   getHeight() {
+//     return this.height;
+//   }
+//   getVolume() {
+//     return this.height * this.lengthy * this.width;
+//   }
+//   getSurfaceArea() {
+//     return (
+//       2 * (this.height * this.width) +
+//       2 * (this.lengthy * this.width) +
+//       2 * (this.lengthy * this.height)
+//     );
+//   }
+// }
+
+// const b = new Block([2, 4, 6]);
+
+// console.log(b.getWidth());
+// console.log(b.getLength());
+// console.log(b.getHeight());
+// console.log(b.getVolume());
+// console.log(b.getSurfaceArea());
+
+/////////////////////////////////////////////
+
+// return the two oldest/oldest ages within the array of ages passed in.
+function twoOldestAges(ages) {
+  console.log(ages.sort((a, b) => a - b).slice(-2));
 }
 
-const b = new Block([2, 4, 6]);
-
-console.log(b.getWidth());
-console.log(b.getLength());
-console.log(b.getHeight());
-console.log(b.getVolume());
-console.log(b.getSurfaceArea());
-
-// this.lengthy * this.width +
-//         this.height * this.lengthy);
+twoOldestAges([1, 5, 87, 45, 8, 8]);
