@@ -520,41 +520,81 @@ function findEvenIndex(arr) {
 // abbrevName("Camila Gallegos");
 
 /////////////////////////////////////
-function switchItUp(number) {
-  switch (number) {
-    case 0:
-      return "Zero";
-      break;
-    case 1:
-      return "One";
-      break;
-    case 2:
-      return "Two";
-      break;
-    case 3:
-      return "Three";
-      break;
-    case 4:
-      return "Four";
-      break;
-    case 5:
-      return "Five";
-      break;
-    case 6:
-      return "Six";
-      break;
-    case 7:
-      return "Seven";
-      break;
-    case 8:
-      return "Eight";
-      break;
-    case 9:
-      return "Nine";
-      break;
-    default:
-      console.log(`Sorry, we are out of ${expr}.`);
+// function switchItUp(number) {
+//   switch (number) {
+//     case 0:
+//       return "Zero";
+//       break;
+//     case 1:
+//       return "One";
+//       break;
+//     case 2:
+//       return "Two";
+//       break;
+//     case 3:
+//       return "Three";
+//       break;
+//     case 4:
+//       return "Four";
+//       break;
+//     case 5:
+//       return "Five";
+//       break;
+//     case 6:
+//       return "Six";
+//       break;
+//     case 7:
+//       return "Seven";
+//       break;
+//     case 8:
+//       return "Eight";
+//       break;
+//     case 9:
+//       return "Nine";
+//       break;
+//     default:
+//       console.log(`Sorry, we are out of ${expr}.`);
+//   }
+// }
+
+// switchItUp(number);
+
+////////////////////////////////////////
+
+class Block {
+  constructor(data) {
+    this.width = data[0];
+    this.lengthy = data[1];
+    this.height = data[2];
+  }
+  getWidth() {
+    return this.width;
+  }
+  getLength() {
+    return this.lengthy;
+  }
+  getHeight() {
+    return this.height;
+  }
+  getVolume() {
+    return this.height * this.lengthy * this.width;
+  }
+  getSurfaceArea() {
+    return (
+      2 * (this.height * this.width) +
+      2 * (this.lengthy * this.width) +
+      2 * (this.lengthy * this.height)
+    );
   }
 }
 
-switchItUp(number);
+const b = new Block([2, 4, 6]);
+
+console.log(b.getWidth());
+console.log(b.getLength());
+console.log(b.getHeight());
+console.log(b.getVolume());
+console.log(b.getSurfaceArea());
+
+// this.lengthy * this.width +
+//         this.height * this.lengthy);
