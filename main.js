@@ -599,8 +599,41 @@ function findEvenIndex(arr) {
 /////////////////////////////////////////////
 
 // return the two oldest/oldest ages within the array of ages passed in.
-function twoOldestAges(ages) {
-  console.log(ages.sort((a, b) => a - b).slice(-2));
+// function twoOldestAges(ages) {
+//   console.log(ages.sort((a, b) => a - b).slice(-2));
+// }
+
+// twoOldestAges([1, 5, 87, 45, 8, 8]);
+
+//////////////////////////////////
+
+// function twoSum(numbers, target) {
+//   const arr = [];
+//   for (let i = 0; i < numbers.length; i++) {
+//     if (numbers[i] === target) {
+//       arr.push(numbers[i]);
+//     } else if (numbers[i] + numbers[numbers.length - 1] === target) {
+//       arr.push();
+//     }
+//   }
+// }
+
+// twoSum([3, 2, 4], 6);
+
+/////////////////////////
+
+function replaceCommon(string, letter) {
+  const stringy = string.split("").filter((x) => x && x.trim().length > 0);
+  const arr = stringy.reduce((acc, letter) => {
+    acc[letter] = (acc[letter] || 0) + 1;
+    return acc;
+  }, {});
+  const sorting = Object.entries(arr).sort((a, b) => a[1] - b[1]);
+  const magicNum = sorting[sorting.length - 1][1];
+  const newArr = sorting.filter((x) => {
+    return x[1] === magicNum;
+  });
+  console.log(string.replaceAll(newArr[0][0], letter));
 }
 
-twoOldestAges([1, 5, 87, 45, 8, 8]);
+replaceCommon("real talk bro", "n");
