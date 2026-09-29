@@ -622,18 +622,28 @@ function findEvenIndex(arr) {
 
 /////////////////////////
 
-function replaceCommon(string, letter) {
-  const stringy = string.split("").filter((x) => x && x.trim().length > 0);
-  const arr = stringy.reduce((acc, letter) => {
-    acc[letter] = (acc[letter] || 0) + 1;
-    return acc;
-  }, {});
-  const sorting = Object.entries(arr).sort((a, b) => a[1] - b[1]);
-  const magicNum = sorting[sorting.length - 1][1];
-  const newArr = sorting.filter((x) => {
-    return x[1] === magicNum;
-  });
-  console.log(string.replaceAll(newArr[0][0], letter));
+// function replaceCommon(string, letter) {
+//   const stringy = string.split("").filter((x) => x && x.trim().length > 0);
+//   const arr = stringy.reduce((acc, letter) => {
+//     acc[letter] = (acc[letter] || 0) + 1;
+//     return acc;
+//   }, {});
+//   const sorting = Object.entries(arr).sort((a, b) => a[1] - b[1]);
+//   const newArr = sorting.filter((x) => {
+//     return x[1] === sorting[sorting.length - 1][1];
+//   });
+//   console.log(string.replaceAll(newArr[0][0], letter));
+// }
+
+// replaceCommon("real talk bro", "n");
+
+function incrementString(strng) {
+  const arr = strng.split("").map((x) => Number(x));
+  const filt = arr
+    .filter((x) => {
+      return !Number.isNaN(x);
+    })
+    .join("");
 }
 
-replaceCommon("real talk bro", "n");
+incrementString("foobar000");
