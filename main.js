@@ -638,12 +638,21 @@ function findEvenIndex(arr) {
 // replaceCommon("real talk bro", "n");
 
 function incrementString(strng) {
+  //extract numbers at the end of string
+  // perform addition
   const arr = strng.split("").map((x) => Number(x));
-  const filt = arr
-    .filter((x) => {
-      return !Number.isNaN(x);
-    })
-    .join("");
+  const filt = arr.filter((x) => {
+    return !Number.isNaN(x);
+  });
+
+  // const noZeros = Number(filt.filter((x) =>).join(""));
+  const back = noZeros.length === 0 ? 1 : noZeros + 1;
+  // console.log(back);
+  console.log(back);
+  console.log(filt.length);
+  console.log(addingZeros);
+  // const thingy = Number(filt) == 0 ? Number(filt) + 1 : true;
+  // console.log(thingy);
 }
 
-incrementString("foobar000");
+incrementString("foobar101");
