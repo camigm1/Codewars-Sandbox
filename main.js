@@ -637,22 +637,45 @@ function findEvenIndex(arr) {
 
 // replaceCommon("real talk bro", "n");
 
-function incrementString(strng) {
-  //extract numbers at the end of string
-  // perform addition
-  const arr = strng.split("").map((x) => Number(x));
-  const filt = arr.filter((x) => {
-    return !Number.isNaN(x);
-  });
+//////////////////////////////////////////////
+// var uniqueInOrder = function (iterable) {
+//   //check the number next to it doesn't repeat
+//   const a = iterable.split("");
+//   const b = new Set(a);
+//   const newArr = [];
 
-  // const noZeros = Number(filt.filter((x) =>).join(""));
-  const back = noZeros.length === 0 ? 1 : noZeros + 1;
-  // console.log(back);
-  console.log(back);
-  console.log(filt.length);
-  console.log(addingZeros);
-  // const thingy = Number(filt) == 0 ? Number(filt) + 1 : true;
-  // console.log(thingy);
+//   a.forEach((x, i) => {
+//     // console.log(x, a[i + 1]);
+//     if (a[i + 1] !== a) {
+//       newArr.push(a[i + 1]);
+//       console.log(i, a[i]);
+//     }
+//   });
+//   console.log(newArr);
+//   console.log();
+// };
+
+// uniqueInOrder("AAAABBBCCDAABBB");
+
+/////////////////////////////////////////////
+
+function solve(str) {
+  const reversed = str.split("").reverse();
+  const original = str.split("");
+  if (reversed.join("") === str.join("")) {
+    console.log(false);
+  } else if (reversed !== str) {
+    const mappy = reversed.map((x) => {
+      return original.includes(x);
+    });
+    console.log(mappy);
+  }
+  const filtered = original.filter((x) => {
+    return reversed.includes(x);
+  });
+  console.log(filtered);
+  // console.log(reversed === str ? false : true);
+  console.log(reversed, str);
 }
 
-incrementString("foobar101");
+solve("ab");
