@@ -693,23 +693,34 @@ function findEvenIndex(arr) {
 //     zeros.push(x);
 //   }
 // });
-const numbers = [1, 23, 34, 0, 3, 88, 0, 2, 76, 9, 65, 0, 1, 54];
-const nonzeros = numbers.filter((x) => x !== 0);
-const zeroes = numbers.filter((x) => x === 0);
-const totals = nonzeros.concat(zeroes);
-console.log(totals);
-// const total = arr.concat(zeros);
-// // [...arr,...zeros]
-// console.log(total);
-// const sorted = [1, 23, 34, 0, 3, 88, 0, 2, 76, 9, 65, 0, 1, 54].sort((a, b) => {
-//   return b - a;
-// });
+// const numbers = [1, 23, 34, 0, 3, 88, 0, 2, 76, 9, 65, 0, 1, 54];
+// const nonzeros = numbers.filter((x) => x !== 0);
+// const zeroes = numbers.filter((x) => x === 0);
+// const totals = nonzeros.concat(zeroes);
 // console.log(totals);
-function endZeros(arr) {
-  const numbers = arr;
-  const nonzeros = numbers.filter((x) => x !== 0);
-  const zeroes = numbers.filter((x) => x === 0);
-  console.log(nonzeros.concat(zeroes));
+// // const total = arr.concat(zeros);
+// // // [...arr,...zeros]
+// // console.log(total);
+// // const sorted = [1, 23, 34, 0, 3, 88, 0, 2, 76, 9, 65, 0, 1, 54].sort((a, b) => {
+// //   return b - a;
+// // });
+// // console.log(totals);
+// function endZeros(arr) {
+//   const numbers = arr;
+//   const nonzeros = numbers.filter((x) => x !== 0);
+//   const zeroes = numbers.filter((x) => x === 0);
+//   console.log(nonzeros.concat(zeroes));
+// }
+
+// endZeros([1, 23, 34, 0, 3, 88, 0, 2, 76, 9, 65, 0, 1, 54]);
+
+function digitMultiplication(expr) {
+  const arr = expr.split("");
+  const noNum = arr.filter((x) => {
+    if (x !== "-") return x;
+  });
+
+  console.log(noNum);
 }
 
-endZeros([1, 23, 34, 0, 3, 88, 0, 2, 76, 9, 65, 0, 1, 54]);
+digitMultiplication("266-66");
