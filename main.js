@@ -659,23 +659,57 @@ function findEvenIndex(arr) {
 
 /////////////////////////////////////////////
 
-function solve(str) {
-  const reversed = str.split("").reverse();
-  const original = str.split("");
-  if (reversed.join("") === str.join("")) {
-    console.log(false);
-  } else if (reversed !== str) {
-    const mappy = reversed.map((x) => {
-      return original.includes(x);
-    });
-    console.log(mappy);
-  }
-  const filtered = original.filter((x) => {
-    return reversed.includes(x);
-  });
-  console.log(filtered);
-  // console.log(reversed === str ? false : true);
-  console.log(reversed, str);
+// function solve(str) {
+//   const reversed = str.split("").reverse();
+//   const original = str.split("");
+//   if (reversed.join("") === str.join("")) {
+//     console.log(false);
+//   } else if (reversed !== str) {
+//     const mappy = reversed.map((x) => {
+//       return original.includes(x);
+//     });
+//     console.log(mappy);
+//   }
+//   const filtered = original.filter((x) => {
+//     return reversed.includes(x);
+//   });
+//   console.log(filtered);
+//   // console.log(reversed === str ? false : true);
+//   console.log(reversed, str);
+// }
+
+// solve("ab");
+
+///////////////////
+// Move all zeros to end of array
+// [1, 23, 34, 0, 3, 88, 0, 2, 76, 9, 65, 0, 1, 54]
+
+// const numbers = [1, 23, 34, 0, 3, 88, 0, 2, 76, 9, 65, 0, 1, 54];
+
+// mappy.forEach((x) => {
+//   if (x !== 0) {
+//     arr.push(x);
+//   } else if (x === 0) {
+//     zeros.push(x);
+//   }
+// });
+const numbers = [1, 23, 34, 0, 3, 88, 0, 2, 76, 9, 65, 0, 1, 54];
+const nonzeros = numbers.filter((x) => x !== 0);
+const zeroes = numbers.filter((x) => x === 0);
+const totals = nonzeros.concat(zeroes);
+console.log(totals);
+// const total = arr.concat(zeros);
+// // [...arr,...zeros]
+// console.log(total);
+// const sorted = [1, 23, 34, 0, 3, 88, 0, 2, 76, 9, 65, 0, 1, 54].sort((a, b) => {
+//   return b - a;
+// });
+// console.log(totals);
+function endZeros(arr) {
+  const numbers = arr;
+  const nonzeros = numbers.filter((x) => x !== 0);
+  const zeroes = numbers.filter((x) => x === 0);
+  console.log(nonzeros.concat(zeroes));
 }
 
-solve("ab");
+endZeros([1, 23, 34, 0, 3, 88, 0, 2, 76, 9, 65, 0, 1, 54]);
