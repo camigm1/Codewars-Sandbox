@@ -717,10 +717,23 @@ function findEvenIndex(arr) {
 function digitMultiplication(expr) {
   const arr = expr.split("");
   const noNum = arr.filter((x) => {
-    if (x !== "-") return x;
+    if (x == "-" || x == "+") return x;
   });
+  if (noNum.length === 1) {
+    const index = arr.indexOf(noNum[0]);
 
-  console.log(noNum);
+    const partTwo = arr.splice(index + 1).map((x) => Number(x));
+    const partOne = arr.slice(0, index).map((x) => Number(x));
+    const second = partTwo.reduce((acc, num) => {
+      return acc * num;
+    });
+    const first = partOne.reduce((acc, num) => {
+      return acc * num;
+    });
+    console.log(noNum == "-" ? first - second : first + second);
+  } else if (noNum.length === 0) {
+    console.log(arr.map((x) => Number(x)).reduce((acc, num) => acc * num));
+  }
 }
 
-digitMultiplication("266-66");
+digitMultiplication("555");
