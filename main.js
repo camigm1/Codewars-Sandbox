@@ -714,26 +714,46 @@ function findEvenIndex(arr) {
 
 // endZeros([1, 23, 34, 0, 3, 88, 0, 2, 76, 9, 65, 0, 1, 54]);
 
-function digitMultiplication(expr) {
-  const arr = expr.split("");
-  const noNum = arr.filter((x) => {
-    if (x == "-" || x == "+") return x;
-  });
-  if (noNum.length === 1) {
-    const index = arr.indexOf(noNum[0]);
+// function digitMultiplication(expr) {
+//   const arr = expr.split("");
+//   const noNum = arr.filter((x) => {
+//     if (x == "-" || x == "+") return x;
+//   });
+//   if (noNum.length === 1) {
+//     const index = arr.indexOf(noNum[0]);
 
-    const partTwo = arr.splice(index + 1).map((x) => Number(x));
-    const partOne = arr.slice(0, index).map((x) => Number(x));
-    const second = partTwo.reduce((acc, num) => {
-      return acc * num;
-    });
-    const first = partOne.reduce((acc, num) => {
-      return acc * num;
-    });
-    console.log(noNum == "-" ? first - second : first + second);
-  } else if (noNum.length === 0) {
-    console.log(arr.map((x) => Number(x)).reduce((acc, num) => acc * num));
-  }
+//     const partTwo = arr.splice(index + 1).map((x) => Number(x));
+//     const partOne = arr.slice(0, index).map((x) => Number(x));
+//     const second = partTwo.reduce((acc, num) => {
+//       return acc * num;
+//     });
+//     const first = partOne.reduce((acc, num) => {
+//       return acc * num;
+//     });
+//     console.log(noNum == "-" ? first - second : first + second);
+//   } else if (noNum.length === 0) {
+//     console.log(arr.map((x) => Number(x)).reduce((acc, num) => acc * num));
+//   }
+// }
+
+// digitMultiplication("555");
+
+///////////////////////////////
+
+// function toNumberArray(string) {
+//   console.log(string.map((x) => Number(x)));
+// }
+
+// toNumberArray(["1.1", "2.2", "3.3"]);
+
+////////////////////////////////
+function sumDigits(number) {
+  const arr = String(number)
+    .split("")
+    .map((x) => Number(x))
+    .filter((x) => !Number.isNaN(x));
+  const sum = arr.reduce((acc, num) => acc + num, 0);
+  console.log(sum);
 }
 
-digitMultiplication("555");
+sumDigits(-32);
