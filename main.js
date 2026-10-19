@@ -747,13 +747,42 @@ function findEvenIndex(arr) {
 // toNumberArray(["1.1", "2.2", "3.3"]);
 
 ////////////////////////////////
-function sumDigits(number) {
-  const arr = String(number)
-    .split("")
-    .map((x) => Number(x))
-    .filter((x) => !Number.isNaN(x));
-  const sum = arr.reduce((acc, num) => acc + num, 0);
-  console.log(sum);
+// function sumDigits(number) {
+//   const arr = String(number)
+//     .split("")
+//     .map((x) => Number(x))
+//     .filter((x) => !Number.isNaN(x));
+//   const sum = arr.reduce((acc, num) => acc + num, 0);
+//   console.log(sum);
+// }
+
+// sumDigits(-32);
+
+///////////////////////////
+
+function checkRoot(string) {
+  // if array doesn't have numbers or 4 items-return "incorrect input"
+  // if not consecutive return "not consecutive"
+  // if consecutive- return the square root
+  const arr = string.split(",").map((x) => Number(x));
+  const filtered = arr.filter((x) => !Number.isNaN(x));
+  const isConsecutive = arr.every((num, index, arr) => {
+    // Skip the very first element because it doesn't have a previous neighbor
+    if (index === 0) return true;
+    // Check if the current number is exactly 1 greater than the previous number
+    return num === arr[index - 1] + 1;
+  });
+  if (arr.length !== 4 || filtered.length !== arr.length) {
+    return "incorrect input";
+  } else if (isConsecutive) {
+    const num = arr.reduce((acc, num) => {
+      return acc * num;
+    });
+    const total = num + 1;
+    return `${total}, ${Math.sqrt(total)}`;
+  } else {
+    return "not consecutive";
+  }
 }
 
-sumDigits(-32);
+console.log(checkRoot("4,5,6,7"));
