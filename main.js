@@ -787,14 +787,14 @@ function findEvenIndex(arr) {
 
 // console.log(checkRoot("4,5,6,7"));
 
-function removeSmallest(numbers) {
-  const arr = numbers;
-  const min = Math.min(...arr);
-  const lowest = arr.indexOf(min);
-  const filtered = arr.filter((x, i) => i !== lowest);
-  console.log(filtered);
-  // const filtered = arr.filter((x, i) => x !== min);
-  return numbers.length > 0 ? filtered : [];
-}
+// function removeSmallest(numbers) {
+//   const arr = numbers;
+//   const min = Math.min(...arr);
+//   const lowest = arr.indexOf(min);
+//   const filtered = arr.filter((x, i) => i !== lowest);
+//   console.log(filtered);
+//   // const filtered = arr.filter((x, i) => x !== min);
+//   return numbers.length > 0 ? filtered : [];
+// }
 
-removeSmallest([2, 2, 1, 2, 1]);
+// removeSmallest([2, 2, 1, 2, 1]);
