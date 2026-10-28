@@ -760,29 +760,41 @@ function findEvenIndex(arr) {
 
 ///////////////////////////
 
-function checkRoot(string) {
-  // if array doesn't have numbers or 4 items-return "incorrect input"
-  // if not consecutive return "not consecutive"
-  // if consecutive- return the square root
-  const arr = string.split(",").map((x) => Number(x));
-  const filtered = arr.filter((x) => !Number.isNaN(x));
-  const isConsecutive = arr.every((num, index, arr) => {
-    // Skip the very first element because it doesn't have a previous neighbor
-    if (index === 0) return true;
-    // Check if the current number is exactly 1 greater than the previous number
-    return num === arr[index - 1] + 1;
-  });
-  if (arr.length !== 4 || filtered.length !== arr.length) {
-    return "incorrect input";
-  } else if (isConsecutive) {
-    const num = arr.reduce((acc, num) => {
-      return acc * num;
-    });
-    const total = num + 1;
-    return `${total}, ${Math.sqrt(total)}`;
-  } else {
-    return "not consecutive";
-  }
+// function checkRoot(string) {
+//   // if array doesn't have numbers or 4 items-return "incorrect input"
+//   // if not consecutive return "not consecutive"
+//   // if consecutive- return the square root
+//   const arr = string.split(",").map((x) => Number(x));
+//   const filtered = arr.filter((x) => !Number.isNaN(x));
+//   const isConsecutive = arr.every((num, index, arr) => {
+//     // Skip the very first element because it doesn't have a previous neighbor
+//     if (index === 0) return true;
+//     // Check if the current number is exactly 1 greater than the previous number
+//     return num === arr[index - 1] + 1;
+//   });
+//   if (arr.length !== 4 || filtered.length !== arr.length) {
+//     return "incorrect input";
+//   } else if (isConsecutive) {
+//     const num = arr.reduce((acc, num) => {
+//       return acc * num;
+//     });
+//     const total = num + 1;
+//     return `${total}, ${Math.sqrt(total)}`;
+//   } else {
+//     return "not consecutive";
+//   }
+// }
+
+// console.log(checkRoot("4,5,6,7"));
+
+function removeSmallest(numbers) {
+  const arr = numbers;
+  const min = Math.min(...arr);
+  const lowest = arr.indexOf(min);
+  const filtered = arr.filter((x, i) => i !== lowest);
+  console.log(filtered);
+  // const filtered = arr.filter((x, i) => x !== min);
+  return numbers.length > 0 ? filtered : [];
 }
 
-console.log(checkRoot("4,5,6,7"));
+removeSmallest([2, 2, 1, 2, 1]);
