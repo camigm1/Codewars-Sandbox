@@ -798,3 +798,32 @@ function findEvenIndex(arr) {
 // }
 
 // removeSmallest([2, 2, 1, 2, 1]);
+
+// function crap(garden, bags, cap) {
+//   const things = garden;
+//   const bag = bags;
+//   const caps = cap;
+//   console.log(bag);
+// }
+
+// crap([_, _, 1, _, _, _], 2, 2);
+
+// const arr = [_, _, 1, _, 1, _];
+
+// // const filt = x.filter((x) => {
+// //   return x === 1;
+// // });
+
+// console.log("WHy si not working");
+
+//////////////////////////////////////////
+
+function stringClean(s){
+const nums = ['0','1','2','3','4','5','6','7','8','9']
+ const arr = s.split('');
+ console.log(arr)
+ const noNum = arr.filter(x=> )
+ console.log(noNum)
+}
+
+stringClean("E3at m2e2!!")
