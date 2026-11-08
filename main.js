@@ -820,10 +820,11 @@ function findEvenIndex(arr) {
 
 function stringClean(s){
 const nums = ['0','1','2','3','4','5','6','7','8','9']
- const arr = s.split('');
+ const arr = s.split('').filter(x=> !nums.includes(x)).join('');
  console.log(arr)
- const noNum = arr.filter(x=> )
- console.log(noNum)
+//  const noNum = arr.filter(x=> !nums.includes(x)).join('')
+//  console.log(noNum)
+ 
 }
 
 stringClean("E3at m2e2!!")
