@@ -818,13 +818,18 @@ function findEvenIndex(arr) {
 
 //////////////////////////////////////////
 
-function stringClean(s){
-const nums = ['0','1','2','3','4','5','6','7','8','9']
- const arr = s.split('').filter(x=> !nums.includes(x)).join('');
- console.log(arr)
-//  const noNum = arr.filter(x=> !nums.includes(x)).join('')
-//  console.log(noNum)
- 
+// function stringClean(s){
+// const nums = ['0','1','2','3','4','5','6','7','8','9']
+// const arr = s.split('').filter(x=> !nums.includes(x)).join('');
+// console.log(arr)
+// }
+
+// stringClean("E3at m2e2!!")
+
+function divisibleByThree(str){
+const arr = str.split('').map(x=>Number(x)).reduce((acc,num)=>acc+num);
+console.log(arr%3===0?true:false)
+// console.log(arr%3)
 }
 
-stringClean("E3at m2e2!!")
+divisibleByThree("100853")
