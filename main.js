@@ -826,10 +826,18 @@ function findEvenIndex(arr) {
 
 // stringClean("E3at m2e2!!")
 
-function divisibleByThree(str){
-const arr = str.split('').map(x=>Number(x)).reduce((acc,num)=>acc+num);
-console.log(arr%3===0?true:false)
-// console.log(arr%3)
-}
+// function divisibleByThree(str){
+// const arr = str.split('').map(x=>Number(x)).reduce((acc,num)=>acc+num);
+// console.log(arr%3===0?true:false)
+// // console.log(arr%3)
+// }
 
-divisibleByThree("100853")
+// divisibleByThree("100853")
+///////////////////////////////
+ function toJadenCase(s) {
+    const arr = s.split(' ');
+    const caps = arr.map(x=>`${x[0].toUpperCase()}${x.slice(1)}`).join(' ')
+    console.log(caps)
+   }
+
+toJadenCase("most trees are blue")
