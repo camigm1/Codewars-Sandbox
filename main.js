@@ -842,10 +842,20 @@ function findEvenIndex(arr) {
 
 // toJadenCase("most trees are blue")
 /////////////////////////////////////////
-function getProductId(url){
-  const index = url.split('-')
-  // const thingy = url.slice(index).split('-')
-  console.log(index[index.length-2])
+// function getProductId(url){
+//   const index = url.split('-')
+//   // const thingy = url.slice(index).split('-')
+//   console.log(index[index.length-2])
+// }
+
+// getProductId("http://www.exampleshop.com/fancy-coffee-cup-p-90764-12052019.html")
+
+function checkNucleotides(sequence) {
+  const arr = ["A", "G", "C","U"]
+  const rna = sequence.split('');
+  const non = rna.filter(x=>!arr.includes(x)).join()
+  const index = rna.indexOf(non[0])+1
+console.log(non.length>0?`There is an invalid letter:${non[0]}.At position ${index}`:`Valid sequence ${sequence}.`)
 }
 
-getProductId("http://www.exampleshop.com/fancy-coffee-cup-p-90764-12052019.html")
+checkNucleotides('CIXFH')
