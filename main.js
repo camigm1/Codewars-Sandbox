@@ -834,10 +834,18 @@ function findEvenIndex(arr) {
 
 // divisibleByThree("100853")
 ///////////////////////////////
- function toJadenCase(s) {
-    const arr = s.split(' ');
-    const caps = arr.map(x=>`${x[0].toUpperCase()}${x.slice(1)}`).join(' ')
-    console.log(caps)
-   }
+//  function toJadenCase(s) {
+//     const arr = s.split(' ');
+//     const caps = arr.map(x=>`${x[0].toUpperCase()}${x.slice(1)}`).join(' ')
+//     console.log(caps)
+//    }
 
-toJadenCase("most trees are blue")
+// toJadenCase("most trees are blue")
+/////////////////////////////////////////
+function getProductId(url){
+  const index = url.split('-')
+  // const thingy = url.slice(index).split('-')
+  console.log(index[index.length-2])
+}
+
+getProductId("http://www.exampleshop.com/fancy-coffee-cup-p-90764-12052019.html")
