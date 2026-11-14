@@ -850,12 +850,22 @@ function findEvenIndex(arr) {
 
 // getProductId("http://www.exampleshop.com/fancy-coffee-cup-p-90764-12052019.html")
 
-function checkNucleotides(sequence) {
-  const arr = ["A", "G", "C","U"]
-  const rna = sequence.split('');
-  const non = rna.filter(x=>!arr.includes(x)).join()
-  const index = rna.indexOf(non[0])+1
-console.log(non.length>0?`There is an invalid letter:${non[0]}.At position ${index}`:`Valid sequence ${sequence}.`)
+// function checkNucleotides(sequence) {
+//   const arr = ["A", "G", "C","U"]
+//   const rna = sequence.split('');
+//   const non = rna.filter(x=>!arr.includes(x)).join()
+//   const index = rna.indexOf(non[0])+1
+// console.log(non.length>0?`There is an invalid letter:${non[0]}.At position ${index}`:`Valid sequence ${sequence}.`)
+// }
+
+// checkNucleotides('CIXFH')
+
+///////////////////////////////
+function accum(s) {
+	const arr = s.toLowerCase().split('')
+  const story = arr.map((x,i)=>{return i===0? `${x.toUpperCase()}`:`${x[0].toUpperCase()}${x.repeat(i)}`})
+  console.log(story.join('-'))
 }
 
-checkNucleotides('CIXFH')
+
+accum("ZpglnRxqenU")
