@@ -861,11 +861,29 @@ function findEvenIndex(arr) {
 // checkNucleotides('CIXFH')
 
 ///////////////////////////////
-function accum(s) {
-	const arr = s.toLowerCase().split('')
-  const story = arr.map((x,i)=>{return i===0? `${x.toUpperCase()}`:`${x[0].toUpperCase()}${x.repeat(i)}`})
-  console.log(story.join('-'))
+// function accum(s) {
+// 	const arr = s.toLowerCase().split('')
+//   const story = arr.map((x,i)=>{return i===0? `${x.toUpperCase()}`:`${x[0].toUpperCase()}${x.repeat(i)}`})
+//   console.log(story.join('-'))
+// }
+
+
+// accum("ZpglnRxqenU")
+
+function sortItOut(array) {
+  // const arr = array.map(x=>Math.floor(x))
+  const zero = array.filter(x=>x===0);
+  const even = array.filter((x)=>
+    {if(Math.floor(x)%2===0){
+    return x
+  }}).sort((a,b)=>b-a)
+   const odd = array.filter((x)=>{if(Math.floor(x)%2===1){
+    return x
+  }}).sort((a,b)=>a-b)
+   
+
+  // const odd = arr.filter(x=> Math.floor(x)%2===1).sort((a,b)=>a-b);
+  console.log(odd.concat(even,zero))
 }
 
-
-accum("ZpglnRxqenU")
+sortItOut([1,2.9,3.4,4,5,6,7,8,9,0.4,0])
