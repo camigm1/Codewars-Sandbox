@@ -902,8 +902,52 @@ function findEvenIndex(arr) {
 //   "awkwardness",
 // ])
 
-function mouthSize(animal) {
-  return animal.toLowerCase() == 'alligator' ? 'small' : 'wide';
+// function mouthSize(animal) {
+//   return animal.toLowerCase() == 'alligator' ? 'small' : 'wide';
+// }
+
+// mouthSize('alligator')
+//////////////////////////////////////////
+
+function greet(lang) {
+	const raw = `[("english", "Welcome")
+, ("czech", "Vitejte")
+, ("danish", "Velkomst")
+, ("dutch", "Welkom")
+, ("estonian", "Tere tulemast")
+, ("finnish", "Tervetuloa")
+, ("flemish", "Welgekomen")
+, ("french", "Bienvenue")
+, ("german", "Willkommen")
+, ("irish", "Failte")
+, ("italian", "Benvenuto")
+, ("latvian", "Gaidits")
+, ("lithuanian", "Laukiamas")
+, ("polish", "Witamy")
+, ("spanish", "Bienvenido")
+, ("swedish", "Valkommen")
+, ("welsh", "Croeso")
+]`
+
+const idiom = lang;
+
+const pairs = [...raw.matchAll(/\("([^"]+)",\s*"([^"]+)"\)/g)].map(
+  ([, language, greeting]) => [language, greeting]
+);
+
+const greetings = new Map(pairs);
+
+for (const [language, greeting] of greetings) {
+  if(idiom === language){
+    console.log(`${greeting}`);
+  }else{
+    console.log('Welcome')
+  }
 }
 
-mouthSize('alligator')
+}
+
+greet('spanish')
+
+
+
