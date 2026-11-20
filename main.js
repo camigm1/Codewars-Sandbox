@@ -940,14 +940,13 @@ const greetings = new Map(pairs);
 for (const [language, greeting] of greetings) {
   if(idiom === language){
     console.log(`${greeting}`);
-  }else{
+  }else if(idiom ==='IP_ADDRESS_INVALID' || idiom === 'IP_ADDRESS_NOT_FOUND' ||idiom ==='IP_ADDRESS_REQUIRED'){
     console.log('Welcome')
+    break;
   }
-}
+}}
 
-}
-
-greet('spanish')
+greet('IP_ADDRESS_INVALID')
 
 
 
