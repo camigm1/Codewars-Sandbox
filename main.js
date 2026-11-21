@@ -909,44 +909,76 @@ function findEvenIndex(arr) {
 // mouthSize('alligator')
 //////////////////////////////////////////
 
-function greet(lang) {
-	const raw = `[("english", "Welcome")
-, ("czech", "Vitejte")
-, ("danish", "Velkomst")
-, ("dutch", "Welkom")
-, ("estonian", "Tere tulemast")
-, ("finnish", "Tervetuloa")
-, ("flemish", "Welgekomen")
-, ("french", "Bienvenue")
-, ("german", "Willkommen")
-, ("irish", "Failte")
-, ("italian", "Benvenuto")
-, ("latvian", "Gaidits")
-, ("lithuanian", "Laukiamas")
-, ("polish", "Witamy")
-, ("spanish", "Bienvenido")
-, ("swedish", "Valkommen")
-, ("welsh", "Croeso")
-]`
+// function greet(lang) {
+// 	const raw = `[("english", "Welcome")
+// , ("czech", "Vitejte")
+// , ("danish", "Velkomst")
+// , ("dutch", "Welkom")
+// , ("estonian", "Tere tulemast")
+// , ("finnish", "Tervetuloa")
+// , ("flemish", "Welgekomen")
+// , ("french", "Bienvenue")
+// , ("german", "Willkommen")
+// , ("irish", "Failte")
+// , ("italian", "Benvenuto")
+// , ("latvian", "Gaidits")
+// , ("lithuanian", "Laukiamas")
+// , ("polish", "Witamy")
+// , ("spanish", "Bienvenido")
+// , ("swedish", "Valkommen")
+// , ("welsh", "Croeso")
+// ]`
 
-const idiom = lang;
+// const idiom = lang;
 
-const pairs = [...raw.matchAll(/\("([^"]+)",\s*"([^"]+)"\)/g)].map(
-  ([, language, greeting]) => [language, greeting]
-);
+// const pairs = [...raw.matchAll(/\("([^"]+)",\s*"([^"]+)"\)/g)].map(
+//   ([, language, greeting]) => [language, greeting]
+// );
 
-const greetings = new Map(pairs);
+// const greetings = new Map(pairs);
 
-for (const [language, greeting] of greetings) {
-  if(idiom === language){
-    console.log(`${greeting}`);
-  }else if(idiom ==='IP_ADDRESS_INVALID' || idiom === 'IP_ADDRESS_NOT_FOUND' ||idiom ==='IP_ADDRESS_REQUIRED'){
-    console.log('Welcome')
-    break;
-  }
-}}
+// for (const [language, greeting] of greetings) {
+//   if(idiom === language){
+//     console.log(`${greeting}`);
+//   }else if(idiom ==='IP_ADDRESS_INVALID' || idiom === 'IP_ADDRESS_NOT_FOUND' ||idiom ==='IP_ADDRESS_REQUIRED'){
+//     console.log('Welcome')
+//     break;
+//   }
+// }}
+// //turn into an object instead
+// greet('IP_ADDRESS_INVALID')
 
-greet('IP_ADDRESS_INVALID')
+////////////////////////////////////////
 
+// function scrollingText(text){
+//     let result = []
+  
+//   for( var i = 0; i < text.length; i++){
+//     result.push((text.slice(i) + text.slice(0,i)).toUpperCase())
+//   }
+  
+//   return result
+// }
+
+// scrollingText('CAMILA')
+
+////////////////////////////////////
+
+function points(games) {
+let team = 0;
+ games.forEach(x=>{
+  if(Number(x[0])>Number((x[2]))){
+    team +=3
+}else if(Number(x[0])<Number(x[2])){
+    team +=0
+}else{
+    team+=1
+}
+ })
+return team
+  
+}
+
+points(["1:0","2:0","3:0","4:0","2:1","3:1","4:1","3:2","4:2","4:3"])
 
 
