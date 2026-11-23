@@ -964,21 +964,25 @@ function findEvenIndex(arr) {
 
 ////////////////////////////////////
 
-function points(games) {
-let team = 0;
- games.forEach(x=>{
-  if(Number(x[0])>Number((x[2]))){
-    team +=3
-}else if(Number(x[0])<Number(x[2])){
-    team +=0
-}else{
-    team+=1
-}
- })
-return team
+// function points(games) {
+// let team = 0;
+//  games.forEach(x=>{
+//   if(Number(x[0])>Number((x[2]))){
+//     team +=3
+// }else if(Number(x[0])<Number(x[2])){
+//     team +=0
+// }else{
+//     team+=1
+// }
+//  })
+// return team
   
-}
+// }
 
-points(["1:0","2:0","3:0","4:0","2:1","3:1","4:1","3:2","4:2","4:3"])
+// points(["1:0","2:0","3:0","4:0","2:1","3:1","4:1","3:2","4:2","4:3"])
+
+////////////////////////////////////////////
+
+
 
 
